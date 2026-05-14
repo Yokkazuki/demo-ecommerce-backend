@@ -29,6 +29,7 @@ spring:
 app:
   jwt-secret: ${JWT_SECRET:dev-secret-key-change-in-production-must-be-long}
   jwt-expiration-ms: ${JWT_EXPIRATION_MS:86400000}
+  cors-origins: ${CORS_ORIGINS:http://localhost:5173}
 
 springdoc:
   swagger-ui:

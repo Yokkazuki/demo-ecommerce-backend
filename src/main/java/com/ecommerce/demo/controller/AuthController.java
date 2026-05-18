@@ -45,6 +45,11 @@ public class AuthController {
             Authentication authentication,
             @RequestBody Map<String, String> body) {
         String username = authentication.getName();
+
+        if ("visitor".equals(username)) {
+            throw new RuntimeException("Visitor cannot change password");
+        }
+
         String oldPassword = body.get("oldPassword");
         String newPassword = body.get("newPassword");
 

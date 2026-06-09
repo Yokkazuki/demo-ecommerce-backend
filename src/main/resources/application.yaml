@@ -24,7 +24,10 @@ spring:
     redis:
       host: ${REDIS_HOST:localhost}
       port: ${REDIS_PORT:6379}
-      timeout: 3000ms
+      password: ${REDIS_PASSWORD}
+      ssl:
+        enabled: true
+      timeout: 5000ms
 
 app:
   jwt-secret: ${JWT_SECRET:dev-secret-key-change-in-production-must-be-long}

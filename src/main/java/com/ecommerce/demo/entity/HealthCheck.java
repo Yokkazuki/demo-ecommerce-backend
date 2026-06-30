@@ -2,7 +2,6 @@ package com.ecommerce.demo.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "health_checks")
@@ -13,13 +12,9 @@ import java.time.LocalDateTime;
 public class HealthCheck {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id = 1L;   // 永遠只有一筆
 
-    private LocalDateTime checkedAt;
+    private Long count = 0L;
 
-    @PrePersist
-    protected void onCreate() {
-        checkedAt = LocalDateTime.now();
-    }
+    private String lastCheckedAt;
 }
